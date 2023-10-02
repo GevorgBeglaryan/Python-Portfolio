@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programmer List</title>
+</head>
+<body>
+    <h1>Programmer List</h1>
+    <ul>
+        {% for programmer in programmers %}
+            <li>
+                <a href="{% url 'programmer_detail' programmer.pk %}">{{ programmer.user.first_name }} {{ programmer.user.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_programmer' %}">Add Programmer</a>
+</body>
+</html>

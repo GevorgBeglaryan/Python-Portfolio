@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programmer Detail</title>
+</head>
+<body>
+    <h1>Programmer Detail</h1>
+    <h2>{{ programmer.user.first_name }} {{ programmer.user.last_name }}</h2>
+    <p>Age: {{ programmer.age }}</p>
+    <p>Language: {{ programmer.language }}</p>
+    <p>Framework: {{ programmer.framework }}</p>
+    <p>Experience: {{ programmer.experience }} years</p>
+
+    <h3>Projects:</h3>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.name }} - {{ project.description }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_project' programmer.pk %}">Add Project</a>
+</body>
+</html>
